@@ -1,6 +1,8 @@
 from datetime import datetime
+from pathlib import Path
 import json
-import os
+
+from config import NOTES_FILE, REMINDERS_FILE
 
 
 # ---------- Time Tool ----------
@@ -23,7 +25,7 @@ def calculate(expression):
 # ---------- Notes Tool ----------
 
 def save_note(note):
-    with open("notes.txt", "a", encoding="utf-8") as file:
+    with open(NOTES_FILE, "a", encoding="utf-8") as file:
         file.write(note + "\n")
 
     return "Note saved."
@@ -31,7 +33,7 @@ def save_note(note):
 
 def show_notes():
     try:
-        with open("notes.txt", "r", encoding="utf-8") as file:
+        with open(NOTES_FILE, "r", encoding="utf-8") as file:
             notes = file.readlines()
 
         if not notes:
@@ -56,11 +58,9 @@ def save_reminder(task):
         "task": task
     }
 
-    filename = "reminders.json"
+    if REMINDERS_FILE.exists():
 
-    if os.path.exists(filename):
-
-        with open(filename, "r", encoding="utf-8") as file:
+        with open(REMINDERS_FILE, "r", encoding="utf-8") as file:
             reminders = json.load(file)
 
     else:
@@ -68,19 +68,18 @@ def save_reminder(task):
 
     reminders.append(reminder)
 
-    with open(filename, "w", encoding="utf-8") as file:
+    with open(REMINDERS_FILE, "w", encoding="utf-8") as file:
         json.dump(reminders, file, indent=4)
 
     return "Reminder saved."
 
+
 def show_reminders():
 
-    filename = "reminders.json"
-
-    if not os.path.exists(filename):
+    if not REMINDERS_FILE.exists():
         return "No reminders found."
 
-    with open(filename, "r", encoding="utf-8") as file:
+    with open(REMINDERS_FILE, "r", encoding="utf-8") as file:
         reminders = json.load(file)
 
     if not reminders:

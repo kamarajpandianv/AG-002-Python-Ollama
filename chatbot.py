@@ -1,5 +1,5 @@
 from ollama import chat
-from config import MODEL_NAME, SYSTEM_PROMPT
+from config import MODEL_NAME, PROMPT_FILE
 from tools import (
     get_current_time,
     calculate,
@@ -9,7 +9,8 @@ from tools import (
     show_reminders
 )
 
-
+with open(PROMPT_FILE, "r", encoding="utf-8") as f:
+    SYSTEM_PROMPT = f.read()
 
 def run_chat():
 
@@ -20,8 +21,10 @@ def run_chat():
         }
     ]
 
-    print("Angel v0.4")
+    print("Angel v1.0")
+    print("Local AI Assistant")
     print("Type 'exit' to quit.\n")
+    
 
     while True:
 
@@ -69,7 +72,6 @@ def run_chat():
 
             continue        
 
-        # ---------- Reminder Tool ----------
         # ---------- Reminder Tool ----------
 
         if prompt.lower().startswith("remind me to"):
