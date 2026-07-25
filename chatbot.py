@@ -1,6 +1,11 @@
 from ollama import chat
 from config import MODEL_NAME, SYSTEM_PROMPT
-from tools import get_current_time
+from tools import (
+    get_current_time,
+    calculate,
+    save_note,
+    show_notes
+)
 
 
 def run_chat():
@@ -29,6 +34,39 @@ def run_chat():
             print()
 
             continue
+
+        # ---------- Calculator Tool ----------
+
+        if prompt.lower().startswith("calculate"):
+
+            expression = prompt[9:].strip()
+
+            print("\nAngel:", calculate(expression))
+            print()
+
+            continue
+
+        # ---------- Notes Tool ----------
+
+        if prompt.lower().startswith("note"):
+
+            note = prompt[4:].strip()
+
+            print("\nAngel:", save_note(note))
+            print()
+
+            continue
+
+
+        if prompt.lower() == "show notes":
+
+            print("\nAngel:")
+            print(show_notes())
+            print()
+
+            continue        
+
+
 
         # ---------- Normal Chat ----------
         messages.append(
