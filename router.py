@@ -23,7 +23,7 @@ def route_command(prompt: str):
 
     # ---------- Time ----------
 
-    if "time" in command:
+    if command == "time":
         return True, get_current_time()
 
     # ---------- Calculator ----------

@@ -1,0 +1,52 @@
+2026-07-26 04:38:03,178 | INFO | Angel started
+2026-07-26 04:38:09,859 | INFO | User: hellp
+2026-07-26 04:38:18,047 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-26 04:38:29,506 | INFO | LLM response generated (231 characters)
+2026-07-26 04:38:34,382 | INFO | User: time
+2026-07-26 04:38:34,382 | INFO | Tool executed: time
+2026-07-26 04:38:37,790 | INFO | User: exit
+2026-07-26 04:38:37,790 | INFO | Angel closed
+2026-07-26 04:44:50,741 | INFO | Angel started
+2026-07-26 04:44:55,833 | INFO | User: time
+2026-07-26 04:44:55,833 | INFO | Tool executed: time
+2026-07-26 04:44:55,838 | INFO | User: calculate 25*4
+2026-07-26 04:44:55,838 | INFO | Tool executed: calculate 25*4
+2026-07-26 04:44:55,840 | INFO | User: calculate
+2026-07-26 04:44:55,840 | INFO | Tool executed: calculate
+2026-07-26 04:44:55,842 | INFO | User: note
+2026-07-26 04:44:55,842 | INFO | Tool executed: note
+2026-07-26 04:44:55,846 | INFO | User: note Version 1 release
+2026-07-26 04:44:55,847 | INFO | Tool executed: note Version 1 release
+2026-07-26 04:44:55,849 | INFO | User: show notes
+2026-07-26 04:44:55,856 | INFO | Tool executed: show notes
+2026-07-26 04:44:55,889 | INFO | User: remind
+2026-07-26 04:44:55,889 | INFO | Tool executed: remind
+2026-07-26 04:44:55,891 | INFO | User: remind Buy milk
+2026-07-26 04:44:55,891 | INFO | Tool executed: remind Buy milk
+2026-07-26 04:44:55,894 | INFO | User: show reminders
+2026-07-26 04:44:55,902 | INFO | Tool executed: show reminders
+2026-07-26 04:44:58,186 | INFO | User: exit
+2026-07-26 04:44:58,187 | INFO | Angel closed
+2026-07-26 04:47:14,084 | INFO | Angel started
+2026-07-26 04:47:18,184 | INFO | User: hello
+2026-07-26 04:47:23,341 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-26 04:47:33,466 | INFO | LLM response generated (36 characters)
+2026-07-26 04:47:37,626 | INFO | User: what is machine learning
+2026-07-26 04:47:38,520 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-26 04:48:42,682 | INFO | LLM response generated (2736 characters)
+2026-07-26 04:48:56,777 | INFO | User: time
+2026-07-26 04:48:56,778 | INFO | Tool executed: time
+2026-07-26 04:49:05,578 | INFO | User: calculate 6-9
+2026-07-26 04:49:05,578 | INFO | Tool executed: calculate 6-9
+2026-07-26 04:49:18,996 | INFO | User: note angel version 1 released 
+2026-07-26 04:49:18,996 | INFO | Tool executed: note angel version 1 released 
+2026-07-26 04:49:25,156 | INFO | User: show noted
+2026-07-26 04:49:30,768 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-26 04:50:17,980 | INFO | LLM response generated (1474 characters)
+2026-07-26 04:50:21,922 | INFO | User: show notedshow notes
+2026-07-26 04:50:25,367 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-26 04:51:13,598 | INFO | LLM response generated (1795 characters)
+2026-07-26 04:51:17,127 | INFO | User: show notes
+2026-07-26 04:51:17,135 | INFO | Tool executed: show notes
+2026-07-26 04:51:26,192 | INFO | User: exit
+2026-07-26 04:51:26,192 | INFO | Angel closed
