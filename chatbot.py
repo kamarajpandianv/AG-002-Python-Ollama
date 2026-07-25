@@ -1,4 +1,4 @@
-from ollama import chat
+from llm import generate_response
 from config import MODEL_NAME, PROMPT_FILE
 from router import route_command
 
@@ -44,18 +44,7 @@ def run_chat():
 
         print("\nAngel: ", end="", flush=True)
 
-        answer = ""
-
-        stream = chat(
-            model=MODEL_NAME,
-            messages=messages,
-            stream=True
-        )
-
-        for chunk in stream:
-            text = chunk["message"]["content"]
-            print(text, end="", flush=True)
-            answer += text
+        answer = generate_response(messages)
 
         print()
 
@@ -63,30 +52,5 @@ def run_chat():
             {
                 "role": "assistant",
                 "content": answer
-            }
+            }   
         )
-
-        stream = chat(
-            model=MODEL_NAME,
-            messages=messages,
-            stream=True
-        )
-
-        for chunk in stream:
-            text = chunk["message"]["content"]
-            print(text, end="", flush=True)
-            answer += text
-
-        print()
-
-        messages.append(
-            {
-                "role": "assistant",
-                "content": answer
-            }
-        )
-
-
-
-
-
