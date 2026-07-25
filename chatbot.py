@@ -4,8 +4,11 @@ from tools import (
     get_current_time,
     calculate,
     save_note,
-    show_notes
+    show_notes,
+    save_reminder,
+    show_reminders
 )
+
 
 
 def run_chat():
@@ -66,7 +69,36 @@ def run_chat():
 
             continue        
 
+        # ---------- Reminder Tool ----------
+        # ---------- Reminder Tool ----------
 
+        if prompt.lower().startswith("remind me to"):
+
+            task = prompt[13:].strip()
+
+            print("\nAngel:", save_reminder(task))
+            print()
+
+            continue
+
+        elif prompt.lower().startswith("remind"):
+
+            task = prompt[6:].strip()
+
+            print("\nAngel:", save_reminder(task))
+            print()
+
+            continue
+
+        # ---------- Show Reminders ----------
+
+        if prompt.lower() in ["show reminders", "show reminder"]:
+
+            print("\nAngel:")
+            print(show_reminders())
+            print()
+
+            continue           
 
         # ---------- Normal Chat ----------
         messages.append(
@@ -99,3 +131,8 @@ def run_chat():
                 "content": answer
             }
         )
+
+
+
+
+
