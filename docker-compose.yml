@@ -1,0 +1,12 @@
+services:
+  angel:
+    build: .
+    container_name: angel-ai
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./prompts:/app/prompts
+    env_file:
+      - .env

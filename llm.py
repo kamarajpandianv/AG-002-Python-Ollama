@@ -1,6 +1,8 @@
-from ollama import chat
-from config import MODEL_NAME
+from ollama import Client
+from config import MODEL_NAME, OLLAMA_HOST
 from logger import logger
+
+client = Client(host=OLLAMA_HOST)
 
 
 def generate_response(messages):
@@ -9,7 +11,7 @@ def generate_response(messages):
     try:
         answer = ""
 
-        stream = chat(
+        stream = client.chat(
             model=MODEL_NAME,
             messages=messages,
             stream=True
@@ -22,6 +24,6 @@ def generate_response(messages):
 
         return answer
 
-    except Exception as e:
+    except Exception:
         logger.exception("LLM communication failed")
         return "Sorry, I couldn't communicate with the language model."
